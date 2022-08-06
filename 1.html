@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Create a Portfolio  HTML and CSS
+	</title>
+	
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1">
+		
+	<style>
+	
+	
+		* {
+			box-sizing: border-box;
+		}
+		
+		
+		body {
+			padding: 15px;
+		}
+		
+	
+		.container {
+			max-width: 1200px;
+			margin: auto;
+		}
+		
+		h1 {
+			color: red;
+		}
+		
+		/* anchor tag decoration */
+		a {
+			text-decoration: none;
+			color: #5673C8;
+		}
+		
+		a:hover {
+			color: lightblue;
+		}
+		
+		/* paragraph tag decoration */
+		p {
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 4;
+			overflow: hidden;
+	
+		}
+		
+		/* row and column decoration */
+		.row {
+			margin: 0px -18px;
+			padding: 8px;
+		}
+		
+		.row > .column {
+			padding: 6px;
+		}
+		
+		.column {
+			float: left;
+			width: 25%;
+		}
+		
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		
+		/* content decoration */
+		.content {
+			background-color: white;
+			padding: 10px;
+			border: 1px solid gray;
+		}
+		
+		/* window size 850 width set */
+		@media screen and (max-width: 850px) {
+			.column {
+				width: 50%;
+			}
+		}
+	
+		/* window size 400 width set */
+		@media screen and (max-width: 400px) {
+			.column {
+				width: 100%;
+			}
+		}
+	</style>
+    <link rel="stylesheet" href="style.css">
+    <style>
+	
+		/* Style to set the title of calculator */
+		.title {
+			margin-bottom: 10px;
+			padding: 5px 0;
+			font-size: 20px;
+			font-weight:bold;
+			text-align:center;
+			width: 447px;
+			color:black;
+			border: solid black 2px;
+		}
+		
+		/* Set the button style */
+		#btn {
+			width: 100%;
+			height: 40px;
+			font-size: 30px;
+		}
+		
+		input[type="button"] {
+			background-color:cyan;
+			color: black;
+			border: solid black 2px;
+			width:100%
+		}
+		
+		/* Set input textarea */
+		input[type="text"] {
+			background-color:white;
+			border: solid black 2px;
+			width:100%
+		}
+	</style>
+	
+	<script>
+		
+		/* Creating function in HTML for backspace operation */
+		function backspace(calc) {											
+			size = calc.display.value.length;
+			calc.display.value = calc.display.value.substring(0, size-1);
+		}
+		
+		/* Creating function to calculate factorial of element */
+		function calculate(calc) {
+			
+			/* Check if function include ! character then
+			calculate factorial of number */
+			if(calc.display.value.includes("!")) {
+				
+				size = calc.display.value.length;
+				n = Number(calc.display.value.substring(0, size-1));
+				f = 1;
+				
+				for(i = 2; i <= n; i++)
+					f = f*i;
+				calc.display.value = f;
+			}
+			
+			/* If function include % character then calculate
+			the % of number */
+			else if(calc.display.value.includes("%")) {
+				
+				size = calc.display.value.length;
+				n = Number(calc.display.value.substring(0, size-1));
+				calc.display.value = n/100;
+			}
+
+			else
+				/* Otherwise evaluate and execute output */
+				calc.display.value = eval(calc.display.value);
+		}
+	</script>
+    
+</head>
+
+<style>
+    body {
+      background-image: url('./bg3.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+    </style>
+     <style>
+        /* CSS Code */
+        /* Heading */
+        h1 {
+            color: orangered;
+            font-size: 45px;
+        }
+    
+        /* 3*3 Grid */
+        #b1, #b2, #b3, #b4, #b5,
+        #b6, #b7, #b8, #b9 {
+            width: 80px;
+            height: 52px;
+            margin: auto;
+            border: 1px solid gray;
+            border-radius: 6px;
+            font-size: 30px;
+            text-align: center;
+        }
+    
+        /* Reset Button */
+        #but {
+            box-sizing: border-box;
+            width: 95px;
+            height: 40px;
+            border: 1px solid dodgerblue;
+            margin: auto;
+            border-radius: 4px;
+            font-family: Verdana,
+                Geneva, Tahoma, sans-serif;
+    
+            background-color: dodgerblue;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    
+        /* Player turn space */
+        #print {
+            font-family: Verdana,
+                Geneva, Tahoma, sans-serif;
+    
+            color: dodgerblue;
+            font-size: 20px;
+        }
+    
+        /* Main Container */
+        #main {
+            text-align: center;
+        }
+    
+        /* Game Instruction Text */
+        #ins {
+            font-family: Verdana,
+                Geneva, Tahoma, sans-serif;
+                
+            color: dodgerblue;
+            font-size: 17px;
+        }
+    </style>
+    <script src="./3.js"></script>
+    <style>
+		#clock {
+			font-size: 175px;
+			width: 900px;
+			margin: 200px;
+			text-align: center;
+			border: 2px solid black;
+			border-radius: 20px;
+		}
+	</style>
+    <body>
+	
+
+	
+	<!-- this is the second part -->
+	<!--Header(start)-->
+    <table id="header" border="0" width="100%"
+        cellpadding="0" cellspacing="0" bgcolor="white">
+        <tr>
+            <td>
+                <table border="0" cellpadding="15"
+                    cellspacing="0" width="90%" align="center">
+                    <tr>
+                        <td>
+                              
+ 
+                        </td>
+ 
+                        <td>
+                            <font face="Comic sans MS" size="6">
+                                <b>Portfolio Website</b>
+                            </font>
+                        </td>
+ 
+                        <td width="15%">
+                              
+                        </td>
+ 
+                        <td>
+                            <a href="#home" style="text-decoration:none">
+                                <font face="Verdana" size="5" color=black>
+                                    Home
+                                </font>
+                            </a>
+                        </td>
+ 
+                        <td>
+                            |
+                        </td>
+ 
+                        <td>
+                            <a href="#about" style="text-decoration:none">
+                                <font face="Verdana" size="5" color=black>
+                                    About
+                                </font>
+                            </a>
+                        </td>
+ 
+                        <td>
+                            |
+                        </td>
+ 
+                        <td>
+                            <a href="#projects" style="text-decoration:none">
+                                <font face="Verdana" size="5" color=black>
+                                    Projects
+                                </font>
+                            </a>
+                        </td>
+ 
+                        <td>
+                            |
+                        </td>
+ 
+                        <td>
+                            <a href="#achievements" style="text-decoration:none">
+                                <font face="Verdana" size="5" color=black>
+                                    Achievements
+                                </font>
+                            </a>
+                        </td>
+ 
+                        <td>
+                            |
+                        </td>
+ 
+                        <td>
+                            <a href="#contact" style="text-decoration:none">
+                                <font face="Verdana" size="5" color=black>
+                                    Contact
+                                </font>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <!--Header(end)-->
+ 
+    <!--Home(start)-->
+    <table id="home" border="1" width="100%"
+        cellpadding="20" cellspacing="0" >
+        <tr>
+            <td>
+                <table border="0" cellpadding="15"
+                    cellspacing="0" width="90%" align="center">
+                    <tr>
+                        <td align="center" valign="middle">
+                            <h3>
+                                <font face="Times New Roman"
+                                    size="6" color="white">
+                                    Hi there! A warm welcome to my portfolio website. Scroll down to see more about me.
+                                </font>
+                            </h3>
+ 
+                            <h2>
+                                <font face="Verdana" size="6"
+                                    color="#4CAF50">
+                                    <!-- Freelance Programmer -->
+                                </font>
+                            </h2>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+		<!-- title and tag -->
+		<div class="container">
+
+	
+			<!-- Content of the body-->
+			<font color="white" size="6">My gallery of events in which I have paritcipated</font>
+			<div class="row">
+				<div class="column">
+					<div class="content">
+						<img src=
+	"./IMG-20220227-WA0036.jpg"
+							alt="" style="width:100%">
+						<h3>
+							<a href="#">Intura De Pilares</a>
+						</h3>
+						
+	
+	
+	
+	<p>
+						It was an event organised by the Cultural Synod.I played an important role in creating the painting on the theme "INDIAN ARMY".
+						</p>
+	
+	
+	
+	
+					</div>
+				</div>
+				
+				<div class="column">
+					<div class="content">
+						<img src=
+	"./aayas.jpg"
+							alt="" style="width:100%">
+						<h3>
+							<a href="#">AAYAS</a>
+						</h3>
+						
+						
+	
+	
+	
+	<p>
+						In our Annual sports fest "AAYAS",I participated in the 100 m race and secured 4th position.
+						</p>
+	
+	
+	
+	
+					</div>
+				</div>
+                <div class="column">
+					<div class="content">
+						<img src=
+	"./codigo.jpeg"
+							alt="" style="width:100%">
+						<h3>
+							<a href="#">Codigo</a>
+						</h3>
+						
+						
+	
+	
+	
+	<p>It is an event organised by the Computer Engineering Society.I participated in this event and gained experience about coding competitons
+						</p>
+	
+	
+	
+	
+					</div>
+				</div>
+                <div class="column">
+					<div class="content">
+						<img src=
+	"./wield the web.jpeg"
+							alt="" style="width:100%">
+						<h3>
+							<a href="#">AAYAS</a>
+						</h3>
+						
+						
+	
+	
+	
+	<p>It is an event organised by the Computer Engineering Society.It was an online training program about web development and I made the project, calculator.
+						</p>
+	
+	
+	
+	
+					</div>
+				</div>
+
+				
+				<div class="column">
+					<div class="content">
+						<img src=
+	"./IMG-20220506-WA0014.jpg"
+							alt="" style="width:100%">
+						<h3>
+							<a href="#">Robokriti</a>
+						</h3>
+						
+						
+	
+	
+	
+	<p>
+			Under Techsrijan(technical fest), an event Robokriti was organised in which I made a wireless robot.
+						</p>
+	
+	
+	
+	
+					</div>
+				</div>
+				
+
+			</div>
+		</div>
+    <!--Home(end)-->
+ 
+ 
+    <!--About(start)-->
+    <table id="about" border="0" width="100%"
+        cellpadding="0" cellspacing="0" >
+        <tr>
+            <td>
+                <table border="0" cellpadding="15"
+                    cellspacing="0" width="80%" align="center">
+                    <tr>
+                        <td height="180" align="center"
+                            valign="middle" colspan="2">
+                            <font face="Verdana" size="7"
+                                color="white">
+                                About Me
+                            </font>
+                            <hr color="white" width="90">
+                        </td>
+                    </tr>
+ 
+                    <tr>
+                 
+                        <td width="60%">
+                            <font face="Verdana" size="4"
+                                color="white">
+                                Thanks for your interest, here
+                                is a quick story of me and this
+                                website.
+                                <hr color="white">
+                             Myself Shashikant Mishra, currently pursuing Bachelors of Technology in the department of Computer Science and Engineering from Madan Mohan Malviya University of Technology,Gorakhpur.
+
+                        <br>
+                        I completed my Class 12 from Academic Global School , Gorakhpur in 2020 with an aggregate of 89%.I was active in cricket and kabbadi.
+                        <br>I completed my class 10 from Sanskriti Public School, Gorakhpur in 2018 with an aggregate of 96.4%.I appreared in NTSE stage I and oylmpiads.
+                                <hr color="white">
+ 
+                          I am deeply passionate about programming.I have learned 
+                          C language and web development(HTML,CSS,JAVASCRIPT and nodejs) and exploring other domains of the programming world.
+                                <hr color="white">
+ 
+                                This website is basically one of my
+                                Web Development project which is
+                                built using HTML  and CSS only.
+                             
+ 
+                                Thanks again for reading this,
+                                because of people like you, it
+                                exists and prospers!
+                                <hr color="whhite">
+                                Signing off,
+                                <br>
+                                <b>Shashikant Mishra</b>
+                            </font>
+                        </td>
+                    </tr>
+                </table>
+                <hr color="black">
+                <hr color="black">
+                <hr color="black">
+            </td>
+        </tr>
+    </table>
+
+    <div class="skill-bars">
+        <div class="bar">
+          <div class="info">
+            <span>HTML</span>
+          </div>
+          <div class="progress-line html">
+            <span></span>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="info">
+            <span>CSS</span>
+          </div>
+          <div class="progress-line css">
+            <span></span>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="info">
+            <span>Javascript</span>
+          </div>
+          <div class="progress-line js">
+            <span></span>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="info">
+            <span>C Language</span>
+          </div>
+          <div class="progress-line clang">
+            <span></span>
+          </div>
+        </div>
+        
+          </div>
+        </div>
+      </div>
+    <!--About(end)-->
+ 
+ 
+    <!--Projects(start)-->
+    <table id="projects" border="0" width="100%"
+        cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <table border="0" cellpadding="15"
+                    cellspacing="0" width="80%" align="center">
+                    <tr>
+                        <td height="180" align="center"
+                            valign="middle" colspan="2">
+                            <font face="Verdana" size="7"
+                                color="white">
+                                Projects
+                            </font>
+                            <hr color="white" width="90">
+                        </td>
+                    </tr>
+ 
+                    <tr>
+                        <td height="10">
+                            <font face="Times New Roman"
+                                size="5" color="white">
+                                <ul>
+                   
+                                    <li>
+                                        <hr color="white">
+                                        Calculator
+                                 <br>
+                                 <div class = title >
+                                    Scientific Calculator
+                                </div>
+                                
+                                <form name = "calc">
+                                    
+                                <table id = "calc" border = 2>
+                                    
+                                <tr>
+                                    <td colspan=5><input id="btn" name="display"
+                                        onkeypress="return event.charCode >= 48
+                                        && event.charCode <= 57" type="text">
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><input id="btn" type="button" value="1"
+                                            OnClick="calc.display.value+='1'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="2"
+                                            OnClick="calc.display.value+='2'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="3"
+                                            OnClick="calc.display.value+='3'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="C"
+                                            OnClick="calc.display.value=''">
+                                    </td>
+                                    <td><input id="btn" type="button" value="<-"
+                                            OnClick="backspace(this.form)">
+                                    </td>
+                                    <td><input id="btn" type="button" value="="
+                                            OnClick="calculate(this.form)">
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><input id="btn" type="button" value="4"
+                                            OnClick="calc.display.value+='4'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="5"
+                                            OnClick="calc.display.value+='5'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="6"
+                                            OnClick="calc.display.value+='6'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="-"
+                                            OnClick="calc.display.value='-'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="%"
+                                            OnClick="calc.display.value+='%'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="cos"
+                                            OnClick="calc.display.value='Math.cos('">
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><input id="btn" type="button" value="7"
+                                            OnClick="calc.display.value+='7'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="8"
+                                            OnClick="calc.display.value+='8'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="9"
+                                            OnClick="calc.display.value+='9'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="*"
+                                            OnClick="calc.display.value+='*'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="n!"
+                                            OnClick="calc.display.value+='!'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="sin"
+                                            OnClick="calc.display.value='Math.sin('">
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><input id="btn" type="button" value="."
+                                            OnClick="calc.display.value+='.'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="0"
+                                            OnClick="calc.display.value+='0'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value=","
+                                            OnClick="calc.display.value+=','">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="+"
+                                            OnClick="calc.display.value+='+'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="/"
+                                            OnClick="calc.display.value+='/'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="tan"
+                                            OnClick="calc.display.value='Math.tan('">
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><input id="btn" type="button" value="E"
+                                            OnClick="calc.display.value+='Math.E'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="pi"
+                                            OnClick="calc.display.value+='Math.PI'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="^"
+                                            OnClick="calc.display.value+='Math.pow('">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="("
+                                            OnClick="calc.display.value+='('">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value=")"
+                                            OnClick="calc.display.value+=')'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="log"
+                                            OnClick="calc.display.value='Math.log('">
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><input id="btn" type="button" value="sqrt"
+                                            OnClick="calc.display.value+='Math.sqrt('">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="ln2"
+                                            OnClick="calc.display.value+='Math.LN2'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="ln10"
+                                            OnClick="calc.display.value+='Math.Log10'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="l2e"
+                                            OnClick="calc.display.value+='Math.LOG2E'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="l10e"
+                                            OnClick="calc.display.value+='Math.log10'">
+                                    </td>
+                                    
+                                    <td><input id="btn" type="button" value="exp"
+                                            OnClick="calc.display.value='Math.exp('">
+                                    </td>
+                                </tr>
+                                </table>
+                                </form>
+
+                                    </li>
+ 
+                                    <li>
+                                        <hr color="white">
+                                     Portfolio website
+                                        <a href="./1.html" style="text-decoration:none">
+                                              ➲
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <hr color="white">
+                                     Simple tic tac toe game
+                                     <br>
+                                     <div id="main">
+        
+                                        <h1>TIC TAC TOE</h1>
+                                
+                                        <!-- Game Instructions -->
+                                        <p id="ins">Game starts by just Tap on
+                                            box<br><br>First Player starts as
+                                            <b>Player X</b><br>And<br>Second
+                                            Player as <b>Player 0</b>
+                                        </p>
+                                
+                                
+                                
+                                
+                                        <br><br>
+                                        <!-- 3*3 grid of Boxes -->
+                                        <input type="text" id="b1" onclick=
+                                            "myfunc_3(); myfunc();" readonly>
+                                
+                                        <input type="text" id="b2" onclick=
+                                            "myfunc_4(); myfunc();" readonly>
+                                
+                                        <input type="text" id="b3" onclick=
+                                            "myfunc_5(); myfunc();" readonly>
+                                        <br><br>
+                                
+                                        <input type="text" id="b4" onclick=
+                                            "myfunc_6(); myfunc();" readonly>
+                                            
+                                        <input type="text" id="b5" onclick=
+                                            "myfunc_7(); myfunc();" readonly>
+                                
+                                        <input type="text" id="b6" onclick=
+                                            "myfunc_8(); myfunc();" readonly>
+                                        <br><br>
+                                
+                                        <input type="text" id="b7" onclick=
+                                            "myfunc_9(); myfunc();" readonly>
+                                
+                                        <input type="text" id="b8" onclick=
+                                            "myfunc_10();myfunc();" readonly>
+                                
+                                        <input type="text" id="b9" onclick=
+                                            "myfunc_11();myfunc();" readonly>
+                                
+                                        <!-- Grid end here -->
+                                        <br><br><br>
+                                        <!-- Button to reset game -->
+                                        <button id="but" onclick="myfunc_2()">
+                                            RESET
+                                        </button>
+                                
+                                        <br><br>
+                                        <!-- Space to show player turn -->
+                                        <p id="print"></p>
+                                
+                                
+                                
+                                        
+                                
+                                
+                                
+                                    </div>
+                                    </li>
+                                    <li>
+                                        <hr color="white">
+                                     Digital clock
+                                     <br>
+                                     <div id="clock">8:10:45</div>
+
+                                     <script>
+                                         setInterval(showTime, 1000);
+                                         function showTime() {
+                                             let time = new Date();
+                                             let hour = time.getHours();
+                                             let min = time.getMinutes();
+                                             let sec = time.getSeconds();
+                                             am_pm = "AM";
+                                 
+                                             if (hour > 12) {
+                                                 hour -= 12;
+                                                 am_pm = "PM";
+                                             }
+                                             if (hour == 0) {
+                                                 hr = 12;
+                                                 am_pm = "AM";
+                                             }
+                                 
+                                             hour = hour < 10 ? "0" + hour : hour;
+                                             min = min < 10 ? "0" + min : min;
+                                             sec = sec < 10 ? "0" + sec : sec;
+                                 
+                                             let currentTime = hour + ":"
+                                                 + min + ":" + sec + am_pm;
+                                 
+                                             document.getElementById("clock")
+                                                 .innerHTML = currentTime;
+                                         }
+                                 
+                                         showTime();
+                                     </script>
+                                    
+                                    </li>
+                                  
+                                </ul>
+                                <hr color="white">
+                              
+                            </font>
+                        </td>
+ 
+                       
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <!--Projects(end)-->
+ 
+    <!--Achievement(start)-->
+    <table id="achievements" border="0" width="100%"
+        cellpadding="0" cellspacing="0" >
+        <tr>
+            <td>
+                <table border="0" cellpadding="15"
+                    cellspacing="0" width="80%" align="center">
+                    <tr>
+                        <td height="180" align="center" valign="middle">
+                            <font face="Verdana" size="7" color="white">
+                                Achievements
+                                <hr color="white" width="100">
+                            </font>
+                        </td>
+                    </tr>
+ 
+                    <tr>
+                        <td>
+                            <font face="Verdana" size="4" color="white">
+                                <ul>
+                                    <li>
+                                        <b>3 star in C language on Hacker Rank</b>
+                                        <ul>
+                                            <li>
+                                                May,2022 - Present.
+                                            </li>
+                                          
+                                        </ul>
+                                    </li>
+ 
+                                    <li>
+                                        <hr color="white">
+                                        <hr color="white">
+                                        <hr color="white">
+                                        <b>3 Star in Problem Solvingon hacker Rank</b>
+                                        <ul>
+                                            <li>
+                                                May,2022 - Present.
+                                            </li>
+                                  
+                                        </ul>
+                                        <li>
+                                            <hr color="white">
+                                            <hr color="white">
+                                            <hr color="white">
+                                            <b>Qualified JEE mains with 95.87 percentile </b>
+                                            <ul>
+                                                <li>
+                                                    May,2021
+                                                </li>
+                                      
+                                            </ul>
+                                        </li>
+                                    </li>
+ 
+                                    <li>
+                                        <hr color="white">
+                                        <hr color="white">
+                                        <hr color="white">
+                                        <b>Was among top 0.1 percent of all students in CBSE class X science board examinations.</b>
+                                        <ul>
+                                            <li>
+                                                May,2018.
+                                            </li>
+                                            <li>
+                                            Certified by CBSE in 2018 for scoring a perfect score of 100 in Science.
+                                            </li>
+                                       
+                                        </ul>
+                                    </li>
+ 
+                                </ul>
+ 
+                            </font>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <!--Achievement(end)-->
+ 
+ 
+    <!--Contact(start)-->
+    <table id="contact" border="0" width="100%"
+        cellpadding="0" cellspacing="0" >
+        <tr>
+            <td>
+                <table border="0" cellpadding="15"
+                    cellspacing="0" width="80%" align="center">
+                    <tr>
+                        <td height="180" align="center"
+                            valign="middle" colspan="2">
+                            <font face="Verdana" size="7"
+                                color="white">
+                                Contact
+                            </font>
+                            <hr color="black" width="90">
+                        </td>
+                    </tr>
+ 
+                    <tr>
+                        <td align="center" valign="top">
+                            <table border="0" width="50%" cellpadding="15"
+                                cellspacing="0" align="center" bgcolor="black">
+                                <tr>
+                                    <td width="30%">
+                                        <hr color="black">
+                                        <font face="Verdana" size="4"
+                                            color="#ffffff">
+                                            Name
+                                        </font>
+                                    </td>
+                                    <td width="70%">
+                                        <font face="Verdana" size="4"
+                                            color="#ffffff">
+                                            <input type="text" size="40">
+                                        </font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="30%">
+                                        <font face="Verdana" size="4"
+                                            color="#ffffff">
+                                            Email
+                                        </font>
+                                    </td>
+                                    <td width="70%">
+                                        <font face="Verdana" size="4"
+                                            color="#ffffff">
+                                            <input type="email" size="40">
+                                        </font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="30%">
+                                        <font face="Verdana" size="4"
+                                            color="#ffffff">
+                                            Number
+                                        </font>
+                                    </td>
+                                    <td width="70%">
+                                        <font face="Verdana" size="4"
+                                            color="#ffffff">
+                                            <input type="number" size="12">
+                                        </font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="30%">
+                                        <font face="Verdana" size="4"
+                                            color="#ffffff">
+                                            Message
+                                        </font>
+                                    </td>
+                                    <td width="70%">
+                                        <font face="Verdana" size="4"
+                                            color="#ffffff">
+                                            <textarea rows="5"
+                                                cols="37">
+                                            </textarea>
+                                        </font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="30%">
+                                          
+                                    </td>
+                                    <td width="70%">
+                                        <button type="Submit">
+                                            <font face="Verdana"
+                                                size="4" color="black">
+                                                <b>Submit</b>
+                                            </font>
+                                        </button>
+                                        <hr color="black">
+                                        <hr color="black">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+ 
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                              
+                              
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <!--Contact(end)-->
+ 
+ 
+    <!--Footer1(start)-->
+    <table id="footer" border="0" width="100%"
+        cellpadding="0" cellspacing="0" bgcolor="white">
+        <tr>
+            <td>
+                <table border="0" cellpadding="15"
+                    cellspacing="0" width="90%" align="center">
+                    <tr>
+                        <td width="13%" valign="top">
+                            <b>LinkedIn</b>
+                            <a href="https://www.linkedin.com/in/shashikant-mishra-673751229" style="text-decoration:none">
+                                ➲
+                            </a>
+                        </td>
+ 
+                   
+ 
+                    
+                     
+ 
+ 
+ 
+             
+ 
+                        <td>
+                            |
+                        </td>
+ 
+                        <td width="13%" valign="top">
+                            <b>Instagram</b>
+                            <a href="https://www.instagram.com/skm_the_dreamer" style="text-decoration:none">
+                                ➲
+                            </a>
+                        </td>
+ 
+                        <td>
+                            |
+                        </td>
+ 
+                        <td width="13%" valign="top">
+                            <b>Email : 2001kantshashi@gmail.com</b>
+                 
+                        </td>
+ 
+                  
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <!--Footer1(end)-->
+ 
+ 
+    <!--Footer2(start)-->
+    <table id="footer" border="0" width="100%"
+        cellpadding="0" cellspacing="0" bgcolor="black">
+        <tr>
+            <td>
+                <table border="0" cellpadding="15"
+                    cellspacing="0" width="90%" align="center">
+                    <tr>
+                        <td width="80%" valign="top">
+                            <font face="Verdana"
+                                color="white" size="5">
+                              Thank you for your time and patience.
+                            </font>
+                        </td>
+ 
+                        <td width="10%">
+                            <font face="arial" color="black" size="5">
+                                <a href="#header" style="text-decoration:none">
+                                    <font face="Verdana" color="white" size="6">
+                                        <b>TOP ☝</b>
+                                    </font>
+                                </a>
+                            </font>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>		
